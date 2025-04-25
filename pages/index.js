@@ -1,12 +1,9 @@
 import Ubuntu from "../components/ubuntu";
-import ReactGA from "react-ga4";
 import Meta from "../components/SEO/Meta";
+import { initGA } from "../utils/analytics";
 
-const TRACKING_ID =
-  process.env.NEXT_PUBLIC_TRACKING_ID || process.env.GA_MEASUREMENT_ID;
-if (TRACKING_ID) {
-  ReactGA.initialize(TRACKING_ID);
-}
+// Initialize Google Analytics if tracking ID is available
+initGA();
 
 function App() {
   return (
